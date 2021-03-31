@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-mongoose.connect("mongodb://localhost/academics",{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect("mongodb://localhost/academic",{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
     console.log('Connected to the dataabase')
 })
