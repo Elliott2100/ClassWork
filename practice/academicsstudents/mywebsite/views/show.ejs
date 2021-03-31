@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include partials/head %>
+    <%- include("./partials/head") %>
   </head>
   <body>
-    <% include partials/menu %>  
+    <%- include("./partials/menu")  %>  
     <div class="container-fluid bg-3 text-center">    
-      <h3><%= page %></h3>
-      <p>Welcome to <%= page %></p>
-      <!-- <p><% doc.courseid %></p> -->
+      <h3><%=page%></h3>
+      <p>Welcome to <%=page%></p>
+      <p>ID = <%=course.courseid%></p>
+      <p>Code = <%=course.code%></p>
+      <p>Title = <%=course.title%></p>
+      <p>Cr. hr = <%=course.crhr%></p>
+      <p>Semester = <%=course.semester%></p>
+
+
     </div>
-    <% include partials/scripts %>
+    <%- include("./partials/scripts")%>
   </body>
 </html>
