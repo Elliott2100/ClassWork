@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">
+      <h3>
+        <%= page %>
+      </h3>
+      <p>Welcome to <%= page %>Detials</p>
+    </div>
+    <div>
+      <% if(courses.length>0){ %>
+      <table class="table" style="width: 100px;">
+        <thead>
+          <tr>
+            <th scope="col">courseid</th>
+            <th scope="col">Code</th>
+            <th scope="col">title</th>
+            <th scope="col">crhr</th>
+            <th scope="col">semester</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<courses.length;i++){ %>
+            <tr>
+                <td><a href="/students/show/<%= courses[i].courseid %>"> <%= courses[i].courseid %></td>
+                <td><%= courses[i].code %></td>
+                <td><%= courses[i].title %></td> 
+                <td><%= courses[i].crhr %></td>
+                <td><%= courses[i].semester %></td>
+            </tr>
+        <% } %>
+        </tbody>
+      </table>
+      <% }else{ %>
+        <div>No data</div>
+        <% } %>
+    </div>
+    <% include partials/scripts %>
+</body>
+
+</html>
