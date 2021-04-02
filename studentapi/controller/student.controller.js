@@ -18,7 +18,7 @@ exports.student_create = (req, res) => {
      });
 }
 exports.student_details = (req, res) => {
-     students.findById(req.params.id, (err, results) => {
+     Students.findById(req.params.id, (err, results) => {
           if (err) return next(err)
           
           console.log(results)
@@ -26,13 +26,13 @@ exports.student_details = (req, res) => {
      })
 }
 exports.student_update=(req,res)=>{
-     students.findByIdAndUpdate(req.params.id,{$set:req.body},(err,product)=>{
+     Students.findByIdAndUpdate(req.params.id,{$set:req.body},(err,product)=>{
        if(err) return next(err)
        res.send('Student Updated Succesfully')
      })
  }
  exports.student_delete=(req,res)=>{
-     students.findByIdAndDelete(req.params.id ,(err)=>{
+     Students.findByIdAndDelete(req.params.id ,(err)=>{
          if(err) return next(err)
          res.send('Deleted Successfully')
      })
